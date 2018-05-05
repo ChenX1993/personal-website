@@ -4,6 +4,12 @@
     <title>Yang's Personal Website</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta property="og:url" content="http://ys2843.com">
+    <meta property="og:title" content="Yang Shi">
+    <meta property="og:type" content="website">
+    <meta property="og:description"
+          content="Computer engineering student at NYU. Front-End developer. Seeking full time opportunity.">
+    <meta property="og:image" content="./images/avatar.jpg">
     <!--[if lte IE 8]>
     <script src="assets/js/ie/html5shiv.js"></script><![endif]-->
     <link rel="stylesheet" href="assets/css/main.css"/>
@@ -26,7 +32,7 @@
             <li><a href="#three">Education</a></li>
             <li><a href="#four">Experience</a></li>
             <li><a href="#five">Projects</a></li>
-            <li><a href="#six">Contact</a></li>
+            <li><a href="#six">Hobbies</a></li>
         </ul>
     </nav>
     <footer>
@@ -40,7 +46,8 @@
             </li>
             <li><a href="https://github.com/ys2843" target="_blank" class="icon fa-github"><span
                     class="label">Github</span></a></li>
-            <li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+            <li><a href="mailto:yangshi9406@gmail.com" target="_top" class="icon fa-envelope"><span
+                    class="label">Email</span></a></li>
         </ul>
     </footer>
 </section>
@@ -57,7 +64,8 @@
                 <header class="major">
                     <h2>Hi, nice to meet you!</h2>
                     <p>I am Yang, a 2<sup>nd</sup> year grad student at New York University majoring in Computer
-                        Engineering. <a href="./Yang%20Shi_NYU_Computer%20Engineering_M.S._NY.pdf" download>(Download Resume)</a></p>
+                        Engineering. <a href="./Yang%20Shi_NYU_Computer%20Engineering_M.S._NY.pdf" download>(Download
+                            Resume)</a></p>
                 </header>
                 <ul>
                     <li>Received Bachelor's at Beijing University of Posts and Telecommunications.</li>
@@ -178,7 +186,7 @@
         <section id="five">
             <div class="container">
                 <h3>Projects</h3>
-                <p>Here are some things I've built over the past 2 years:</p>
+                <p>Here are some projects I've done over the past 2 years:</p>
                 <header>
                     <h4><a href="https://github.com/ys2843/Chrome-Extension-Sephora-Ingredients-Check" target="_blank">
                         Sephora Shoping Helper</a></h4>
@@ -230,34 +238,51 @@
                     raising money, like, comment under and rating projects, following users etc.</p>
             </div>
         </section>
+
         <!-- Six -->
         <section id="six">
             <div class="container">
-                <h3>Contact Me</h3>
-                <p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non.
-                    Adipiscing cubilia elementum integer. Integer eu ante ornare amet commetus.</p>
-                <form method="post" action="#">
-                    <div class="row uniform">
-                        <div class="6u 12u(xsmall)"><input type="text" name="name" id="name" placeholder="Name"/></div>
-                        <div class="6u 12u(xsmall)"><input type="email" name="email" id="email" placeholder="Email"/>
+                <h3>Hobbies</h3>
+                <p>I've been passionate about hobbies my whole life. I love learning, collecting, researching and
+                    developing new skills. Some of these skills have proven useful in my career, and some are just for
+                    me to enjoy.</p>
+                <div class="features">
+                    <article>
+                        <img class="image" src="images/hobbyPiano.jpg" alt="piano"/>
+                        <div class="inner">
+                            <h4>Piano</h4>
+                            <p>I love music, especially classical piano music. My favorite composers are Bach, Mozart,
+                                Beethoven, Chopin and Tchaikovsky. I started to play piano since high school and enjoy
+                                it all the time. Sometimes I also compose my own piece of music for fun. </p>
                         </div>
-                    </div>
-                    <div class="row uniform">
-                        <div class="12u"><input type="text" name="subject" id="subject" placeholder="Subject"/></div>
-                    </div>
-                    <div class="row uniform">
-                        <div class="12u"><textarea name="message" id="message" placeholder="Message"
-                                                   rows="6"></textarea></div>
-                    </div>
-                    <div class="row uniform">
-                        <div class="12u">
-                            <ul class="actions">
-                                <li><input type="submit" class="special" value="Send Message"/></li>
-                                <li><input type="reset" value="Reset Form"/></li>
-                            </ul>
+                    </article>
+                    <article>
+                        <img class="image" src="images/hobbySki.jpg" alt="skiing"/>
+                        <div class="inner">
+                            <h4>Skiing</h4>
+                            <p>Skiing is my favorite sport and it also brings me good luck. It was in a ski resort in
+                                Grindelwald, Switzerland, where I first met my wife and we fell in love.</p>
                         </div>
-                    </div>
-                </form>
+                    </article>
+                    <article>
+                        <img class="image" src="images/draw.jpg" alt="drawing"/>
+                        <div class="inner">
+                            <h4>Drawing</h4>
+                            <p>I love drawing since I was very young. At that time I was full of creativity and love to
+                                draw whatever in my mind.</p>
+                        </div>
+                    </article>
+                    <article>
+                        <img class="image" src="images/travel.JPG" alt="traveling"/>
+                        <div class="inner">
+                            <h4>Traveling</h4>
+                            <p>Traveling is also one of my favorite. I love to meet people with different culture. I
+                                have been to many European countries, " +
+                                "like France, Spain, Germany, Switzerland, Italy etc. And I have visited Mexico last
+                                summer. Before then I have lived in Egypt for several months.</p>
+                        </div>
+                    </article>
+                </div>
             </div>
         </section>
 
@@ -280,6 +305,32 @@
 <script src="assets/js/jquery.scrolly.min.js"></script>
 <script src="assets/js/skel.min.js"></script>
 <script src="assets/js/util.js"></script>
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Person",
+    "name": "Yang Shi",
+    "jobTitle": "Student",
+    "url": "http://ys2843.com",
+    "sameAs": [
+        "https://github.com/ys2843",
+        "https://www.linkedin.com/in/yang-shi-591056135/",
+        "https://www.facebook.com/profile.php?id=100007728030651",
+    ],
+    "gender": "male",
+    "birthDate": "1994-06-04",
+    "image": "./images/avatar.jpg"
+}
+
+
+
+
+
+
+
+
+
+</script>
 <!--[if lte IE 8]>
 <script src="assets/js/ie/respond.min.js"></script><![endif]-->
 <script src="assets/js/main.js"></script>
