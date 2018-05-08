@@ -12,14 +12,15 @@
     <meta property="og:description"
           content="Computer engineering student at NYU. Front-End developer. Seeking full time opportunity.">
     <meta property="og:image" content="./images/avatar.jpg">
+    <link rel="stylesheet" href="assets/css/weather.css"/>
     <!--[if lte IE 8]>
     <script src="assets/js/ie/html5shiv.js"></script><![endif]-->
     <link rel="stylesheet" href="assets/css/main.css"/>
     <!--[if lte IE 8]>
     <link rel="stylesheet" href="assets/css/ie8.css"/><![endif]-->
+    <script language="JavaScript" src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
 </head>
 <body>
-
 <!-- Header -->
 <section id="header">
     <header>
@@ -53,13 +54,17 @@
         </ul>
     </footer>
 </section>
-
 <!-- Wrapper -->
 <div id="wrapper">
-
     <!-- Main -->
     <div id="main">
-
+        <section id="weather">
+            <div class="container">
+                <div id="weatherdisplay"></div>
+                <h4 id="datetoday"></h4>
+                <h4 id="weatherlabel"></h4>
+            </div>
+        </section>
         <!-- One -->
         <section id="one">
             <div class="container">
@@ -80,7 +85,6 @@
                 </ul>
             </div>
         </section>
-
         <!-- Two -->
         <section id="two">
             <div class="container">
@@ -133,7 +137,6 @@
                 </div>
             </div>
         </section>
-
 
         <!-- Four -->
         <section id="four">
@@ -302,6 +305,76 @@
 </div>
 
 <!-- Scripts -->
+<script>
+    var xml = new XMLHttpRequest();
+    xml.onreadystatechange = handler;
+    var url = 'http://openweathermap.org/data/2.5/weather?q=' + geoplugin_city() + '&appid=b6907d289e10d714a6e88b30761fae22';
+
+    function insertWeather(weather) {
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth() + 1; //January is 0!
+        var yyyy = today.getFullYear();
+
+        if (dd < 10) {
+            dd = '0' + dd
+        }
+
+        if (mm < 10) {
+            mm = '0' + mm
+        }
+
+        today = mm + '/' + dd + '/' + yyyy;
+        var weatherdisplay = document.getElementById("weatherdisplay");
+        var id = weather.weather[0].id;
+        var weatherdescription;
+        switch (true) {
+            case /2[0-9][0-9]/.test(id):
+                weatherdescription = 'stormy';
+                break;
+            case /3[0-9][0-9]/.test(id):
+            case /5[0-9][0-9]/.test(id):
+                weatherdescription = 'rainy';
+                break;
+            case /6[0-9][0-9]/.test(id):
+                weatherdescription = 'snowy';
+                break;
+            case /800/.test(id):
+                weatherdescription = 'sunny';
+                break;
+            case /7[0-9][0-9]/.test(id):
+            case /8[0-9][0-9]/.test(id):
+                console.log(id)
+                weatherdescription = 'cloudy';
+                break;
+            default:
+                weatherdescription = 'rainbow';
+        }
+        weatherdisplay.className = weatherdescription;
+        var weatherlabel = document.getElementById("weatherlabel");
+        weatherlabel.style.color = 'white';
+        var datetoday = document.getElementById("datetoday");
+        datetoday.style.color = 'white';
+        datetoday.innerText = "Today is " + today;
+        var text = document.createTextNode("");
+        text.nodeValue = "In " + weather.name + ", it is now " + weatherdescription + ". Humidity is " + weather.main.humidity + ". Temperature is " + weather.main.temp_min + "℃ - " + weather.main.temp_max + "℃.";
+        weatherlabel.appendChild(text);
+    }
+
+    function handler() {
+        if (xml.readyState === XMLHttpRequest.DONE) {
+            if (xml.status === 200) {
+                var weather = JSON.parse(xml.responseText);
+                insertWeather(weather);
+            } else {
+                alert('There was a problem with the Weather detecter.');
+            }
+        }
+    }
+
+    xml.open('GET', encodeURI(url));
+    xml.send();
+</script>
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/jquery.scrollzer.min.js"></script>
 <script src="assets/js/jquery.scrolly.min.js"></script>
@@ -323,16 +396,6 @@
     "birthDate": "1994-06-04",
     "image": "./images/avatar.jpg"
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
