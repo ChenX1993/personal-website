@@ -15,7 +15,7 @@
     <meta property="og:image" content="./images/avatar.jpg">
     <!--[if lte IE 8]>
     <script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-    <link rel="stylesheet" href="assets/css/main.css"/>
+    <link rel=stylesheet href="assets/css/main.css"/>
     <!--[if lte IE 8]>
     <link rel="stylesheet" href="assets/css/ie8.css"/><![endif]-->
 
@@ -195,7 +195,7 @@
                 <p>Here are some projects I've done over the past 2 years:</p>
                 <header>
                     <h4><a href="https://github.com/ys2843/Chrome-Extension-Sephora-Ingredients-Check" target="_blank">
-                        Sephora Shoping Helper</a></h4>
+                        Sephora Shopping Helper</a></h4>
                     <p>A chrome extension designed for pregnant women to shop on Sephora</p>
                 </header>
                 <p>The app automatically detects harmful ingredients during pregnancy on Sephora product pages. And it
@@ -283,7 +283,8 @@
                         <div class="inner">
                             <h4>Traveling</h4>
                             <p>Traveling is also one of my favorite. I love to meet people with different culture. I
-                                have been to many European countries, like France, Spain, Germany, Switzerland, Italy etc. And I have visited Mexico last
+                                have been to many European countries, like France, Spain, Germany, Switzerland, Italy
+                                etc. And I have visited Mexico last
                                 summer. Before then I have lived in Egypt for several months.</p>
                         </div>
                     </article>
@@ -350,7 +351,6 @@
             default:
                 weatherdescription = 'rainbow';
         }
-        weatherdisplay.className = weatherdescription;
         var weatherlabel = document.getElementById("weatherlabel");
         var datetoday = document.createElement("h4");
         datetoday.style.color = 'white';
@@ -364,6 +364,16 @@
         weatherDetail.style.color = 'white';
         weatherDetail.textContent = "It is " + weatherdescription + " now. Humidity is " + weather.main.humidity + ". Temperature is " + weather.main.temp_min + "℃ - " + weather.main.temp_max + "℃.";
         weatherlabel.appendChild(weatherDetail);
+
+        var resource = document.createElement('link');
+        resource.setAttribute("rel", "stylesheet");
+        resource.setAttribute("href", "http://ys2843.com/assets/css/weather.css");
+        resource.setAttribute("type", "text/css");
+        var head = document.getElementsByTagName('head')[0];
+        head.appendChild(resource);
+        weatherdisplay.className = weatherdescription;
+
+
     }
 
     function handler() {
@@ -380,8 +390,7 @@
     xml.open('GET', encodeURI(url));
     xml.send();
 </script>
-<link rel="stylesheet" href="assets/css/weather.css"/>
-<script src="assets/js/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="assets/js/jquery.scrollzer.min.js"></script>
 <script src="assets/js/jquery.scrolly.min.js"></script>
 <script src="assets/js/skel.min.js"></script>
@@ -402,9 +411,6 @@
     "birthDate": "1994-06-04",
     "image": "./images/avatar.jpg"
 }
-
-
-
 
 
 

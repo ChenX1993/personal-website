@@ -169,7 +169,7 @@
                 <p>Here are some projects I've done over the past 2 years:</p>
                 <header>
                     <h4><a href=https://github.com/ys2843/Chrome-Extension-Sephora-Ingredients-Check target=_blank>
-                        Sephora Shoping Helper</a></h4>
+                        Sephora Shopping Helper</a></h4>
                     <p>A chrome extension designed for pregnant women to shop on Sephora</p>
                 </header>
                 <p>The app automatically detects harmful ingredients during pregnancy on Sephora product pages. And it
@@ -273,9 +273,8 @@
     </div>
 </div>
 <script language=JavaScript src=http://www.geoplugin.net/javascript.gp type=text/javascript></script>
-<script>var xml=new XMLHttpRequest();xml.onreadystatechange=handler;var url="http://openweathermap.org/data/2.5/weather?q="+geoplugin_city()+"&appid=b6907d289e10d714a6e88b30761fae22";function insertWeather(c){var i=new Date();var l=i.getDate();var d=i.getMonth()+1;var f=i.getFullYear();if(l<10){l="0"+l}if(d<10){d="0"+d}i=d+"/"+l+"/"+f;var g=document.getElementById("weatherdisplay");var a=c.weather[0].id;var k;switch(true){case /2[0-9][0-9]/.test(a):k="stormy";break;case /3[0-9][0-9]/.test(a):case /5[0-9][0-9]/.test(a):k="rainy";break;case /6[0-9][0-9]/.test(a):k="snowy";break;case /800/.test(a):k="sunny";break;case /7[0-9][0-9]/.test(a):case /8[0-9][0-9]/.test(a):k="cloudy";break;default:k="rainbow"}g.className=k;var j=document.getElementById("weatherlabel");var b=document.createElement("h4");b.style.color="white";b.textContent="Today is "+i;j.appendChild(b);var e=document.createElement("h4");e.style.color="white";e.textContent="In "+c.name;j.appendChild(e);var h=document.createElement("h4");h.style.color="white";h.textContent="It is "+k+" now. Humidity is "+c.main.humidity+". Temperature is "+c.main.temp_min+"℃ - "+c.main.temp_max+"℃.";j.appendChild(h)}function handler(){if(xml.readyState===XMLHttpRequest.DONE){if(xml.status===200){var a=JSON.parse(xml.responseText);insertWeather(a)}else{alert("There was a problem with the Weather detecter.")}}}xml.open("GET",encodeURI(url));xml.send();</script>
-<link rel=stylesheet href="assets/css/weather.css"/>
-<script src=assets/js/jquery.min.js></script>
+<script>var xml=new XMLHttpRequest();xml.onreadystatechange=handler;var url="http://openweathermap.org/data/2.5/weather?q="+geoplugin_city()+"&appid=b6907d289e10d714a6e88b30761fae22";function insertWeather(d){var j=new Date();var n=j.getDate();var e=j.getMonth()+1;var g=j.getFullYear();if(n<10){n="0"+n}if(e<10){e="0"+e}j=e+"/"+n+"/"+g;var h=document.getElementById("weatherdisplay");var a=d.weather[0].id;var m;switch(true){case /2[0-9][0-9]/.test(a):m="stormy";break;case /3[0-9][0-9]/.test(a):case /5[0-9][0-9]/.test(a):m="rainy";break;case /6[0-9][0-9]/.test(a):m="snowy";break;case /800/.test(a):m="sunny";break;case /7[0-9][0-9]/.test(a):case /8[0-9][0-9]/.test(a):m="cloudy";break;default:m="rainbow"}var l=document.getElementById("weatherlabel");var c=document.createElement("h4");c.style.color="white";c.textContent="Today is "+j;l.appendChild(c);var f=document.createElement("h4");f.style.color="white";f.textContent="In "+d.name;l.appendChild(f);var i=document.createElement("h4");i.style.color="white";i.textContent="It is "+m+" now. Humidity is "+d.main.humidity+". Temperature is "+d.main.temp_min+"℃ - "+d.main.temp_max+"℃.";l.appendChild(i);var b=document.createElement("link");b.setAttribute("rel","stylesheet");b.setAttribute("href","http://ys2843.com/assets/css/weather.css");b.setAttribute("type","text/css");var k=document.getElementsByTagName("head")[0];k.appendChild(b);h.className=m}function handler(){if(xml.readyState===XMLHttpRequest.DONE){if(xml.status===200){var a=JSON.parse(xml.responseText);insertWeather(a)}else{alert("There was a problem with the Weather detecter.")}}}xml.open("GET",encodeURI(url));xml.send();</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src=assets/js/jquery.scrollzer.min.js></script>
 <script src=assets/js/jquery.scrolly.min.js></script>
 <script src=assets/js/skel.min.js></script>
@@ -296,7 +295,6 @@
     "birthDate": "1994-06-04",
     "image": "./images/avatar.jpg"
 }
-
 </script>
 <!--[if lte IE 8]>
 <script src=assets/js/ie/respond.min.js></script><![endif]-->
