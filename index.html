@@ -12,13 +12,12 @@
     <meta property="og:description"
           content="Computer engineering student at NYU. Front-End developer. Seeking full time opportunity.">
     <meta property="og:image" content="./images/avatar.jpg">
-    <link rel="stylesheet" href="assets/css/weather.css"/>
     <!--[if lte IE 8]>
     <script src="assets/js/ie/html5shiv.js"></script><![endif]-->
     <link rel="stylesheet" href="assets/css/main.css"/>
     <!--[if lte IE 8]>
     <link rel="stylesheet" href="assets/css/ie8.css"/><![endif]-->
-    <script language="JavaScript" src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
+
 </head>
 <body>
 <!-- Header -->
@@ -305,6 +304,7 @@
 </div>
 
 <!-- Scripts -->
+<script language="JavaScript" src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
 <script>
     var xml = new XMLHttpRequest();
     xml.onreadystatechange = handler;
@@ -344,7 +344,6 @@
                 break;
             case /7[0-9][0-9]/.test(id):
             case /8[0-9][0-9]/.test(id):
-                console.log(id)
                 weatherdescription = 'cloudy';
                 break;
             default:
@@ -375,6 +374,7 @@
     xml.open('GET', encodeURI(url));
     xml.send();
 </script>
+<link rel="stylesheet" href="assets/css/weather.css"/>
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/jquery.scrollzer.min.js"></script>
 <script src="assets/js/jquery.scrolly.min.js"></script>

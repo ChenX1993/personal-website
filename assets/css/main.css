@@ -591,6 +591,9 @@ ul.icons li .icon:before {
     #main > section > .container {
         padding: 4em 0 2em 0;
     }
+    #titleBar {
+        display: none;
+    }
 
 }
 
@@ -612,7 +615,9 @@ ul.icons li .icon:before {
     #wrapper {
         padding-right: 20em;
     }
-
+    #titleBar {
+        display: none;
+    }
 }
 
 /* Medium */
