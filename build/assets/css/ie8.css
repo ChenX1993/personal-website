@@ -1,0 +1,16 @@
+code,
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select,
+textarea,
+.box,
+.image,
+.image img,
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+.button {
+    position: relative;
+    -ms-behavior: url("../js/ie/PIE.htc");
+}
