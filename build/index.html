@@ -96,7 +96,7 @@
                 <p>I am a master student at NYU, expecting graduate date is 5/15/2018.</p>
                 <div class=features>
                     <article>
-                        <a href=https://www.nyu.edu/ target=_blank class=image><img src=images/nyu_logo.png alt=""/></a>
+                        <a href=https://www.nyu.edu/ target=_blank class=image><img data-src=http://ys2843.com/images/nyu_logo.png alt=""/></a>
                         <div class=inner>
                             <header>
                                 <h4>New York University</h4>
@@ -107,7 +107,7 @@
                         </div>
                     </article>
                     <article>
-                        <a href=http://www.bupt.edu.cn/ class=image target=_blank><img src=images/bupt_logo.png alt=""/></a>
+                        <a href=http://www.bupt.edu.cn/ class=image target=_blank><img data-src=http://ys2843.com/images/bupt_logo.png alt=""/></a>
                         <div class=inner>
                             <header>
                                 <h4>Beijing University of Posts and Telecommunications</h4>
@@ -127,7 +127,7 @@
                     worked in large company like Huawei Corporation.</p>
                 <div class=features>
                     <article>
-                        <a href=https://www.linkedin.com/company/stack-technologies/ target=_blank class=image><img src=images/stack_logo.png alt=""/></a>
+                        <a href=https://www.linkedin.com/company/stack-technologies/ target=_blank class=image><img data-src=http://ys2843.com/images/stack_logo.png alt=""/></a>
                         <div class=inner>
                             <header>
                                 <h4>Stack Technology, Inc</h4>
@@ -145,7 +145,7 @@
                         </div>
                     </article>
                     <article>
-                        <a href=http://www.huawei.com/us/ class=image target=_blank><img src=images/huaweiLogo.png alt=""/></a>
+                        <a href=http://www.huawei.com/us/ class=image target=_blank><img data-src=http://ys2843.com/images/huawei_logo.png alt=""/></a>
                         <div class=inner>
                             <header>
                                 <h4>Huawei Corporation</h4>
@@ -226,7 +226,7 @@
                     me to enjoy.</p>
                 <div class=features>
                     <article>
-                        <img class=image src=images/hobbyPiano.jpg alt="piano"/>
+                        <img class=image data-src=http://ys2843.com/images/hobbyPiano.jpg alt="piano"/>
                         <div class=inner>
                             <h4>Piano</h4>
                             <p>I love music, especially classical piano music. My favorite composers are Bach, Mozart,
@@ -235,7 +235,7 @@
                         </div>
                     </article>
                     <article>
-                        <img class=image src=images/hobbySki.jpg alt="skiing"/>
+                        <img class=image data-src=http://ys2843.com/images/hobbySki.jpg alt="skiing"/>
                         <div class=inner>
                             <h4>Skiing</h4>
                             <p>Skiing is my favorite sport and it also brings me good luck. It was in a ski resort in
@@ -243,7 +243,7 @@
                         </div>
                     </article>
                     <article>
-                        <img class=image src=images/draw.jpg alt="drawing"/>
+                        <img class=image data-src=http://ys2843.com/images/draw.jpg alt="drawing"/>
                         <div class=inner>
                             <h4>Drawing</h4>
                             <p>I love drawing since I was very young. At that time I was full of creativity and love to
@@ -251,11 +251,12 @@
                         </div>
                     </article>
                     <article>
-                        <img class=image src=images/travel.JPG alt="traveling"/>
+                        <img class=image data-src=http://ys2843.com/images/travel.JPG alt="traveling"/>
                         <div class=inner>
                             <h4>Traveling</h4>
                             <p>Traveling is also one of my favorite. I love to meet people with different culture. I
-                                have been to many European countries, like France, Spain, Germany, Switzerland, Italy etc. And I have visited Mexico last
+                                have been to many European countries, like France, Spain, Germany, Switzerland, Italy
+                                etc. And I have visited Mexico last
                                 summer. Before then I have lived in Egypt for several months.</p>
                         </div>
                     </article>
@@ -273,8 +274,8 @@
     </div>
 </div>
 <script language=JavaScript src=http://www.geoplugin.net/javascript.gp type=text/javascript></script>
-<script>var xml=new XMLHttpRequest();xml.onreadystatechange=handler;var url="http://openweathermap.org/data/2.5/weather?q="+geoplugin_city()+"&appid=b6907d289e10d714a6e88b30761fae22";function insertWeather(d){var j=new Date();var n=j.getDate();var e=j.getMonth()+1;var g=j.getFullYear();if(n<10){n="0"+n}if(e<10){e="0"+e}j=e+"/"+n+"/"+g;var h=document.getElementById("weatherdisplay");var a=d.weather[0].id;var m;switch(true){case /2[0-9][0-9]/.test(a):m="stormy";break;case /3[0-9][0-9]/.test(a):case /5[0-9][0-9]/.test(a):m="rainy";break;case /6[0-9][0-9]/.test(a):m="snowy";break;case /800/.test(a):m="sunny";break;case /7[0-9][0-9]/.test(a):case /8[0-9][0-9]/.test(a):m="cloudy";break;default:m="rainbow"}var l=document.getElementById("weatherlabel");var c=document.createElement("h4");c.style.color="white";c.textContent="Today is "+j;l.appendChild(c);var f=document.createElement("h4");f.style.color="white";f.textContent="In "+d.name;l.appendChild(f);var i=document.createElement("h4");i.style.color="white";i.textContent="It is "+m+" now. Humidity is "+d.main.humidity+". Temperature is "+d.main.temp_min+"℃ - "+d.main.temp_max+"℃.";l.appendChild(i);var b=document.createElement("link");b.setAttribute("rel","stylesheet");b.setAttribute("href","http://ys2843.com/assets/css/weather.css");b.setAttribute("type","text/css");var k=document.getElementsByTagName("head")[0];k.appendChild(b);h.className=m}function handler(){if(xml.readyState===XMLHttpRequest.DONE){if(xml.status===200){var a=JSON.parse(xml.responseText);insertWeather(a)}else{alert("There was a problem with the Weather detecter.")}}}xml.open("GET",encodeURI(url));xml.send();</script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>var xml=new XMLHttpRequest();xml.onreadystatechange=handler;var url="http://openweathermap.org/data/2.5/weather?q="+geoplugin_city()+"&appid=b6907d289e10d714a6e88b30761fae22";xml.open("GET",encodeURI(url));xml.send();window.onload=function(){[].forEach.call(document.querySelectorAll("img[data-src]"),function(a){a.setAttribute("src",a.getAttribute("data-src"));a.onload=function(){a.removeAttribute("data-src")}})};function getDateToday(){var b=new Date();var a=b.getDate();var c=b.getMonth()+1;var d=b.getFullYear();if(a<10){a="0"+a}if(c<10){c="0"+c}b=c+"/"+a+"/"+d;return b}function insertWeather(c){var h=getDateToday();var f=document.getElementById("weatherdisplay");var a=c.weather[0].id;var k;switch(true){case /2[0-9][0-9]/.test(a):k="stormy";break;case /3[0-9][0-9]/.test(a):case /5[0-9][0-9]/.test(a):k="rainy";break;case /6[0-9][0-9]/.test(a):k="snowy";break;case /800/.test(a):k="sunny";break;case /7[0-9][0-9]/.test(a):case /8[0-9][0-9]/.test(a):k="cloudy";break;default:k="rainbow"}var j=document.getElementById("weatherlabel");var d=document.createElement("h4");d.style.color="white";d.textContent="Today is "+h;j.appendChild(d);var e=document.createElement("h4");e.style.color="white";e.textContent="In "+c.name;j.appendChild(e);var g=document.createElement("h4");g.style.color="white";g.textContent="It is "+k+" now. Humidity is "+c.main.humidity+". Temperature is "+c.main.temp_min+"℃ - "+c.main.temp_max+"℃.";j.appendChild(g);var b=document.createElement("link");b.setAttribute("rel","stylesheet");b.setAttribute("href","http://ys2843.com/assets/css/weather.css");b.setAttribute("type","text/css");var i=document.getElementsByTagName("head")[0];i.appendChild(b);f.className=k}function handler(){if(xml.readyState===XMLHttpRequest.DONE){if(xml.status===200){var a=JSON.parse(xml.responseText);insertWeather(a)}else{alert("There was a problem with the Weather detecter.")}}};</script>
+<script src=https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js></script>
 <script src=assets/js/jquery.scrollzer.min.js></script>
 <script src=assets/js/jquery.scrolly.min.js></script>
 <script src=assets/js/skel.min.js></script>
