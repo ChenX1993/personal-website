@@ -59,10 +59,11 @@
     <!-- Main -->
     <div id="main">
         <section id="weather">
-            <div class="container">
-                <div id="weatherdisplay"></div>
-                <h4 id="datetoday"></h4>
-                <h4 id="weatherlabel"></h4>
+            <div class="container" id="weatherdiv">
+                <div id="weatherlabel"></div>
+                <div id="weatherdisplaycontainer">
+                    <div id="weatherdisplay"></div>
+                </div>
             </div>
         </section>
         <!-- One -->
@@ -352,13 +353,18 @@
         }
         weatherdisplay.className = weatherdescription;
         var weatherlabel = document.getElementById("weatherlabel");
-        weatherlabel.style.color = 'white';
-        var datetoday = document.getElementById("datetoday");
+        var datetoday = document.createElement("h4");
         datetoday.style.color = 'white';
-        datetoday.innerText = "Today is " + today;
-        var text = document.createTextNode("");
-        text.nodeValue = "In " + weather.name + ", it is now " + weatherdescription + ". Humidity is " + weather.main.humidity + ". Temperature is " + weather.main.temp_min + "℃ - " + weather.main.temp_max + "℃.";
-        weatherlabel.appendChild(text);
+        datetoday.textContent = "Today is " + today;
+        weatherlabel.appendChild(datetoday);
+        var city = document.createElement("h4");
+        city.style.color = 'white';
+        city.textContent = "In " + weather.name;
+        weatherlabel.appendChild(city);
+        var weatherDetail = document.createElement("h4");
+        weatherDetail.style.color = 'white';
+        weatherDetail.textContent = "it is " + weatherdescription + " now. Humidity is " + weather.main.humidity + ". Temperature is " + weather.main.temp_min + "℃ - " + weather.main.temp_max + "℃.";
+        weatherlabel.appendChild(weatherDetail);
     }
 
     function handler() {
@@ -397,6 +403,12 @@
     "birthDate": "1994-06-04",
     "image": "./images/avatar.jpg"
 }
+
+
+
+
+
+
 
 
 </script>

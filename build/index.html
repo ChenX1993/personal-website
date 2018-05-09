@@ -1,12 +1,12 @@
 <!DOCTYPE HTML>
-<html lang="en">
+<html lang=en>
 <head>
     <title>Yang's Personal Website</title>
     <meta charset="utf-8"/>
     <meta name=description content="My name is Yang Shi, a 2nd year grad student at New York University majoring in Computer Engineering. Now seeking full time front end developer/Software Development Engineer job."/>
     <meta name=viewport content="width=device-width, initial-scale=1"/>
     <meta property=og:url content=http://ys2843.com>
-    <meta name="theme-color" content="#60B1F5"/>
+    <meta name=theme-color content="#60B1F5"/>
     <meta property=og:title content="Yang Shi">
     <meta property=og:type content=website>
     <meta property=og:description content="Computer engineering student at NYU. Front-End developer. Seeking full time opportunity.">
@@ -48,10 +48,11 @@
 <div id=wrapper>
     <div id=main>
         <section id=weather>
-            <div class=container>
-                <div id=weatherdisplay></div>
-                <h4 id=datetoday></h4>
-                <h4 id=weatherlabel></h4>
+            <div class=container id=weatherdiv>
+                <div id=weatherlabel></div>
+                <div id=weatherdisplaycontainer>
+                    <div id=weatherdisplay></div>
+                </div>
             </div>
         </section>
         <section id=one>
@@ -273,7 +274,7 @@
     </div>
 </div>
 <script language=JavaScript src=http://www.geoplugin.net/javascript.gp type=text/javascript></script>
-<script>var xml=new XMLHttpRequest();xml.onreadystatechange=handler;var url="http://openweathermap.org/data/2.5/weather?q="+geoplugin_city()+"&appid=b6907d289e10d714a6e88b30761fae22";function insertWeather(c){var g=new Date();var j=g.getDate();var d=g.getMonth()+1;var e=g.getFullYear();if(j<10){j="0"+j}if(d<10){d="0"+d}g=d+"/"+j+"/"+e;var f=document.getElementById("weatherdisplay");var a=c.weather[0].id;var i;switch(true){case /2[0-9][0-9]/.test(a):i="stormy";break;case /3[0-9][0-9]/.test(a):case /5[0-9][0-9]/.test(a):i="rainy";break;case /6[0-9][0-9]/.test(a):i="snowy";break;case /800/.test(a):i="sunny";break;case /7[0-9][0-9]/.test(a):case /8[0-9][0-9]/.test(a):i="cloudy";break;default:i="rainbow"}f.className=i;var h=document.getElementById("weatherlabel");h.style.color="white";var b=document.getElementById("datetoday");b.style.color="white";b.innerText="Today is "+g;var k=document.createTextNode("");k.nodeValue="In "+c.name+", it is now "+i+". Humidity is "+c.main.humidity+". Temperature is "+c.main.temp_min+"℃ - "+c.main.temp_max+"℃.";h.appendChild(k)}function handler(){if(xml.readyState===XMLHttpRequest.DONE){if(xml.status===200){var a=JSON.parse(xml.responseText);insertWeather(a)}else{alert("There was a problem with the Weather detecter.")}}}xml.open("GET",encodeURI(url));xml.send();</script>
+<script>var xml=new XMLHttpRequest();xml.onreadystatechange=handler;var url="http://openweathermap.org/data/2.5/weather?q="+geoplugin_city()+"&appid=b6907d289e10d714a6e88b30761fae22";function insertWeather(c){var i=new Date();var l=i.getDate();var d=i.getMonth()+1;var f=i.getFullYear();if(l<10){l="0"+l}if(d<10){d="0"+d}i=d+"/"+l+"/"+f;var g=document.getElementById("weatherdisplay");var a=c.weather[0].id;var k;switch(true){case /2[0-9][0-9]/.test(a):k="stormy";break;case /3[0-9][0-9]/.test(a):case /5[0-9][0-9]/.test(a):k="rainy";break;case /6[0-9][0-9]/.test(a):k="snowy";break;case /800/.test(a):k="sunny";break;case /7[0-9][0-9]/.test(a):case /8[0-9][0-9]/.test(a):k="cloudy";break;default:k="rainbow"}g.className=k;var j=document.getElementById("weatherlabel");var b=document.createElement("h4");b.style.color="white";b.textContent="Today is "+i;j.appendChild(b);var e=document.createElement("h4");e.style.color="white";e.textContent="In "+c.name;j.appendChild(e);var h=document.createElement("h4");h.style.color="white";h.textContent="it is "+k+" now. Humidity is "+c.main.humidity+". Temperature is "+c.main.temp_min+"℃ - "+c.main.temp_max+"℃.";j.appendChild(h)}function handler(){if(xml.readyState===XMLHttpRequest.DONE){if(xml.status===200){var a=JSON.parse(xml.responseText);insertWeather(a)}else{alert("There was a problem with the Weather detecter.")}}}xml.open("GET",encodeURI(url));xml.send();</script>
 <link rel=stylesheet href="assets/css/weather.css"/>
 <script src=assets/js/jquery.min.js></script>
 <script src=assets/js/jquery.scrollzer.min.js></script>
@@ -296,7 +297,6 @@
     "birthDate": "1994-06-04",
     "image": "./images/avatar.jpg"
 }
-
 
 </script>
 <!--[if lte IE 8]>
